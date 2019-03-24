@@ -17,14 +17,17 @@ class MaxHeap {
 	push(data, priority) {
 	 const node = new Node(data, priority);
 
-	 if(this.root) {
-	 	this.root.appendChild(node);
-	 }
+
+	 if(!this.root) {
+	     this.root = node;
+	 } else {
+         this.root.appendChild(node);
+     }
 
 	}
 
 	pop() {
-		
+		this.root = null;
 	}
 
 	detachRoot() {
@@ -40,7 +43,7 @@ class MaxHeap {
 	}
 
 	isEmpty() {
-		
+        return (this.root===null);
 	}
 
 	clear() {
@@ -48,7 +51,9 @@ class MaxHeap {
 	}
 
 	insertNode(node) {
-		
+	    if(!this.root) {
+            this.root = node;
+        }
 	}
 
 	shiftNodeUp(node) {

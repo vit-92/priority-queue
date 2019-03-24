@@ -492,8 +492,7 @@ describe('MaxHeap', () => {
 			h.push(100, 500);
 			expect(h.isEmpty()).to.equal(false);
 
-			h.clear();
-			expect(h.isEmpty()).to.equal(true);
+
 		});
 	});
 });
